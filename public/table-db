@@ -1,2 +1,17 @@
 User
 Admin
+Seller
+Category
+DeliveryMethod
+PaymentMethod
+Product
+CategoryAttribute
+ProductAttributeValues
+Country
+State
+City
+Address
+Order
+OrderItem
+ProductImage
+ProductReview

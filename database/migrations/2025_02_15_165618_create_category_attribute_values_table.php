@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admins', function (Blueprint $table) {
+        Schema::create('category_attribute_values', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('mobile')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('value');
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('category_attribute_id')->constrained();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('category_attribute_values');
     }
 };
