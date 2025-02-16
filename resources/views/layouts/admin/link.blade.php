@@ -14,4 +14,6 @@
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 <link href="/admin/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
 <link href="/admin/assets/css/dashboard/dash_1.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/admin/assets/css/forms/theme-checkbox-radio.css">
+<link href="assets/css/tables/table-basic.css" rel="stylesheet" type="text/css">
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
