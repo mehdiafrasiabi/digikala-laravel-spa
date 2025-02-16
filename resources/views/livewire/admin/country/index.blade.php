@@ -1,4 +1,3 @@
-
 <div class="row">
 
     {{--form--}}
@@ -25,17 +24,24 @@
                     </div>
 
                     @error('name')
-                    <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert" wire:loading.remove>
+                    <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert"
+                         wire:loading.remove>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <svg> ...</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-x">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
                         </button>
-                        <strong>خطا !</strong> {{$message}}.</button>
+                        <strong>خطا !</strong> <br>
+                        {{$message}}
                     </div>
                     @enderror
 
 
                     <button type="submit" class="btn btn-primary _effect--ripple waves-effect waves-light">
-                        <span  wire:loading.remove> ثبت</span>
+                        <span wire:loading.remove> ثبت</span>
                         <div class="spinner-border text-white me-2 align-self-center loader-sm " wire:loading></div>
 
                     </button>
@@ -90,7 +96,7 @@
                                         <a href="javascript:void(0);" wire:click="edit({{$country->id}})"
                                            class="action-btn btn-edit bs-tooltip me-2"
                                            data-toggle="tooltip" data-placement="top" title=""
-                                           data-bs-original-title="Edit">
+                                           data-bs-original-title="ویرایش">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                  stroke-linecap="round" stroke-linejoin="round"
@@ -104,7 +110,7 @@
                                            wire:click="delete({{$country->id}})"
                                            class="action-btn btn-delete bs-tooltip"
                                            data-toggle="tooltip" data-placement="top" title=""
-                                           data-bs-original-title="Delete">
+                                           data-bs-original-title="حدف">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                  stroke-linecap="round" stroke-linejoin="round"
