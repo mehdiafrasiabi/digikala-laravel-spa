@@ -106,7 +106,7 @@
                                             </svg>
                                         </a>
                                         <a href="javascript:void(0);"
-                                           wire:confirm="آیا مطمئن هستید؟"
+                                           wire:confirm="آیا از انتخاب خود اطمینان دارید؟"
                                            wire:click="delete({{$country->id}})"
                                            class="action-btn btn-delete bs-tooltip"
                                            data-toggle="tooltip" data-placement="top" title=""
