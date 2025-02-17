@@ -20,5 +20,14 @@
             showConfirmButton: false,
             timer: 1500
         })
-    })
+    });
+    window.addEventListener('warning', function(event) {
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: event.detail,
+            showConfirmButton: false,
+            timer: 5000,
+        })
+    });
 </script>

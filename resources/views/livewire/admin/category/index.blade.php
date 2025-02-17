@@ -20,7 +20,7 @@
                                 <sup style="color: red">*</sup>
                             </label>
                             <input type="text" class="form-control" id="state" wire:model="name" name="name"
-                                   placeholder="خراسان رضوی">
+                                   placeholder="">
                         </div>
 
                     </div>
@@ -45,7 +45,8 @@
                         <div class="col-sm-12">
                             <label class="form-label" for="country">دسته بندی والد :</label>
                             <sup style="color: red">*</sup>
-                            <select class="form-select" name="categoryId" id="country" wire:model="categoryId2" wire:ignore>
+                            <select class="form-select" name="parentId" id="country" wire:model="parentId2" wire:ignore>
+                                <option value="">دسته بندی والد</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
@@ -112,17 +113,18 @@
                             <th scope="col">#</th>
                             <th scope="col">اسم دسته بندی </th>
                             <th scope="col">دسته بندی والد</th>
+                            <th class="text-center" scope="col">ویژگی ها</th>
 
                             <th class="text-center" scope="col">عملیات</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($categories as $category)
+                        @foreach($allCategories as $category)
 
                             <tr>
                                 <td>
-                                    {{$loop->iteration + $categories->firstItem() - 1}}
+                                    {{$loop->iteration + $allCategories->firstItem() - 1}}
                                 </td>
                                 <td>
                                     <div class="media">
@@ -136,9 +138,13 @@
                                     <div class="media">
 
                                         <div class="media-body align-self-center">
-                                            <h6 class="mb-0">{{$category->state->name}}</h6>
+                                            <p class="mb-0">{{@$category->parent->name}}</p>
                                         </div>
                                     </div>
+                                </td>
+                                <td class="text-center">
+                                    <a href="{{route('admin.category.features',$category->id)}}" class="btn btn-outline-info mb-2 me-4">ویژگی </a>
+
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btns">
@@ -181,7 +187,7 @@
 
                         </tbody>
                     </table>
-                    {{$categories->links('layouts.admin.pagination')}}
+                    {{$allCategories->links('layouts.admin.pagination')}}
                 </div>
 
             </div>
