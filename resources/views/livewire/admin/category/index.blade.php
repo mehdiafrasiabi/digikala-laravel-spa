@@ -2,12 +2,11 @@
 
     {{--form--}}
     <div class="col-md-4">
-
         <div class="statbox widget box box-shadow">
             <div class="widget-header">
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                        <h4>مدیریت کشورها</h4>
+                        <h4>مدیریت دسته بندی ها</h4>
                     </div>
                 </div>
             </div>
@@ -17,12 +16,13 @@
 
                     <div class="row mb-4">
                         <div class="col-sm-12">
-                            <label for="name" class="form-label">نام کشور :
+                            <label for="state" class="form-label">نام دسته بندی :
                                 <sup style="color: red">*</sup>
                             </label>
-                            <input type="text" class="form-control" id="name" wire:model="name" name="name"
-                                   placeholder="">
+                            <input type="text" class="form-control" id="state" wire:model="name" name="name"
+                                   placeholder="خراسان رضوی">
                         </div>
+
                     </div>
 
                     @error('name')
@@ -41,6 +41,33 @@
                     </div>
                     @enderror
 
+                    <div class="row mb-4">
+                        <div class="col-sm-12">
+                            <label class="form-label" for="country">دسته بندی والد :</label>
+                            <sup style="color: red">*</sup>
+                            <select class="form-select" name="categoryId" id="country" wire:model="categoryId2" wire:ignore>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    @error('countryId')
+                    <div class="alert alert-light-danger alert-dismissible fade show border-0 mb-4" role="alert" wire:loading.remove
+                         wire:loading.remove>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="feather feather-x">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                        <strong>خطا !</strong> <br>
+                        {{$message}}
+                    </div>
+                    @enderror
 
                     <button type="submit" class="btn btn-success btn-lg _effect--ripple waves-effect waves-light">
                         <span wire:loading.remove>ثبت</span>
@@ -72,7 +99,7 @@
             <div class="widget-header">
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                        <h4>لیست کشورها</h4>
+                        <h4>لیست دسته بندی ها</h4>
                     </div>
                 </div>
             </div>
@@ -83,31 +110,40 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">اسم کشور</th>
+                            <th scope="col">اسم دسته بندی </th>
+                            <th scope="col">دسته بندی والد</th>
 
                             <th class="text-center" scope="col">عملیات</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($countries as $country)
+                        @foreach($categories as $category)
 
                             <tr>
                                 <td>
-                                    {{$loop->iteration + $countries->firstItem() - 1}}
+                                    {{$loop->iteration + $categories->firstItem() - 1}}
                                 </td>
                                 <td>
                                     <div class="media">
 
                                         <div class="media-body align-self-center">
-                                            <h6 class="mb-0">{{$country->name}}</h6>
+                                            <h6 class="mb-0">{{$category->name}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="media">
+
+                                        <div class="media-body align-self-center">
+                                            <h6 class="mb-0">{{$category->state->name}}</h6>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="text-center">
                                     <div class="action-btns">
 
-                                        <a href="javascript:void(0);" wire:click="edit({{$country->id}})"
+                                        <a href="javascript:void(0);" wire:click="edit({{$category->id}})"
                                            class="action-btn btn-edit bs-tooltip me-2"
                                            data-toggle="tooltip" data-placement="top" title=""
                                            data-bs-original-title="ویرایش">
@@ -121,7 +157,7 @@
                                         </a>
                                         <a href="javascript:void(0);"
                                            wire:confirm="آیا از انتخاب خود اطمینان دارید؟"
-                                           wire:click="delete({{$country->id}})"
+                                           wire:click="delete({{$category->id}})"
                                            class="action-btn btn-delete bs-tooltip"
                                            data-toggle="tooltip" data-placement="top" title=""
                                            data-bs-original-title="حدف">
@@ -145,7 +181,7 @@
 
                         </tbody>
                     </table>
-                    {{$countries->links('layouts.admin.pagination')}}
+                    {{$categories->links('layouts.admin.pagination')}}
                 </div>
 
             </div>

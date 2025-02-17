@@ -48,17 +48,17 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="dashboard" data-bs-parent="#accordionExample">
                     <li>
-                        <a href="./index.html"> انالیز کلی </a>
+                        <a href="{{route('admin.dashboard.index')}}"> انالیز کلی </a>
                     </li>
                     <li>
-                        <a href="./index2.html"> فروش </a>
+                        <a href="{{route('admin.dashboard.index')}}"> فروش </a>
                     </li>
                 </ul>
             </li>
 
             {{--Category--}}
             <li class="menu">
-                <a href="#category" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.category.index')}}"  class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -68,22 +68,9 @@
                             <line x1="21" y1="14" x2="3" y2="14"></line>
                             <line x1="21" y1="18" x2="3" y2="18"></line>
                         </svg>
-                        <span>دسته بندی</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
+                        <span>دسته بندی ها</span>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled" id="category" data-bs-parent="#accordionExample">
-                    <li>
-                        <a href="./app-calendar.html"> Calendar </a>
-                    </li>
-
-                </ul>
             </li>
             {{--Products--}}
             <li class="menu">
@@ -266,14 +253,14 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="map" data-bs-parent="#accordionExample">
                     <li>
-                        <a href="./layout-blank-page.html">کشور ها</a>
+                        <a href="{{route('admin.country.index')}}">کشور ها</a>
                     </li>
                     <li>
-                        <a href="./layout-empty.html">استان ها</a>
+                        <a href="{{route('admin.state.index')}}">استان ها</a>
                     </li>
 
                     <li>
-                        <a href="./layout-collapsible-menu.html">شهر ها</a>
+                        <a href="{{route('admin.city.index')}}">شهر ها</a>
                     </li>
                 </ul>
             </li>
