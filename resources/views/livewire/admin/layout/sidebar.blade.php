@@ -56,7 +56,7 @@
                 </ul>
             </li>
 
-            {{--Category--}}
+            {{--Category DONE--}}
             <li class="menu">
                 <a href="{{route('admin.category.index')}}"  class="dropdown-toggle">
                     <div class="">
@@ -96,10 +96,11 @@
                 <ul class="collapse submenu list-unstyled" id="products" data-bs-parent="#accordionExample">
 
                     <li>
-                        <a href="./component-fonticons.html">لیست محصولات</a>
+                        <a href="{{route('admin.product.index')}}">لیست محصولات</a>
                     </li>
+
                     <li>
-                        <a href="./component-flags.html">افزودن محصول جدید</a>
+                        <a href="{{route('admin.product.create')}}">افزودن محصول جدید</a>
                     </li>
                 </ul>
             </li>
@@ -231,7 +232,7 @@
                     </li>
                 </ul>
             </li>
-            {{--Map--}}
+            {{--Map  DONE--}}
             <li class="menu">
                 <a href="#map" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('path');
             $table->boolean('is_cover')->default(false);
             $table->foreignId('product_id')->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

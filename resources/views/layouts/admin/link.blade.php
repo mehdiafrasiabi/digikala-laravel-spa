@@ -40,3 +40,16 @@
 
 <link rel="stylesheet" type="text/css" href="/admin/src/assets/css/light/forms/switches.css">
 <link rel="stylesheet" type="text/css" href="/admin/src/assets/css/dark/forms/switches.css">
+
+
+<link rel="stylesheet" href="/admin/src/plugins/src/filepond/filepond.min.css">
+<link rel="stylesheet" href="/admin/src/plugins/src/filepond/FilePondPluginImagePreview.min.css">
+
+{{--//upload image--}}
+<link href="/admin/src/plugins/css/light/filepond/custom-filepond.css" rel="stylesheet" type="text/css" />
+<link href="/admin/src/plugins/css/dark/filepond/custom-filepond.css" rel="stylesheet" type="text/css" />
+
+
+
+
+

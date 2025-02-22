@@ -9,8 +9,10 @@ class CategoryFeature extends Model
 {
     //
     use HasFactory;
+
     protected $guarded = [];
-    public function submit($formData, $categoryId ,$featureId)
+
+    public function submit($formData, $categoryId, $featureId)
     {
         CategoryFeature::query()->updateOrCreate(
             [
@@ -26,5 +28,16 @@ class CategoryFeature extends Model
     public function values()
     {
         return $this->hasMany(CategoryFeatureValue::class, 'category_feature_id', 'id');
+    }
+
+    public function categoryFeatureValues()
+    {
+        return $this->hasMany(CategoryFeatureValue::class);
+
+    }
+    public function categoryFeature()
+    {
+        return $this->belongsTo(CategoryFeature::class);
+
     }
 }
