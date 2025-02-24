@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Country;
 
 use App\Models\Country;
+use App\Repository\CountryRepositoryInterface;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,6 +13,12 @@ class Index extends Component
     use WithPagination;
     public $name;
     public $countryId;
+    private $repository;
+
+    public function boot(CountryRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
     public function submit($formData , Country $country)
     {
         $validator = Validator::make($formData,[
@@ -22,7 +29,7 @@ class Index extends Component
             '*.max'=>'حداکثر نوشتن : 55 کارکتر',
         ]);
         $validator->validate();
-        $country->submit($formData,$this->countryId);
+        $this->repository->submit($formData,$this->countryId);
         $this->reset();
         $this->dispatch('success','عملیات با موفقیت انجام شد');
 //        dd($this->dispatch('success'));

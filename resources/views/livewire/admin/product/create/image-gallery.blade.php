@@ -148,7 +148,7 @@
                                         <div class="row">
                                             <div class="col-6 text-start">
                                                 <input type="radio" id="cover_image" class="form-check-input"
-                                                       {{$photo->id==$product->coverImage->id ? 'checked' : ''}}
+                                                       {{@$photo->id==@$product->coverImage->id ? 'checked' : ''}}
                                                        wire:confirm="ایا از تغییر خود اطمنیان دارید؟"
                                                        wire:click="setOldCoverImage({{$photo}})"
                                                        style="cursor: pointer"

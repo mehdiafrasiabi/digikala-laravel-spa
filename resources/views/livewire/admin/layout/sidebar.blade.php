@@ -72,7 +72,7 @@
                     </div>
                 </a>
             </li>
-            {{--Products--}}
+            {{--Products Donee--}}
             <li class="menu">
                 <a href="#products" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -265,9 +265,9 @@
                     </li>
                 </ul>
             </li>
-            {{--Delivery Method--}}
+            {{--Delivery Method Done--}}
             <li class="menu">
-                <a href="#delivery_method" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.delivery.index')}}"  aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -282,9 +282,9 @@
 
                 </a>
             </li>
-            {{--Payment Method--}}
+            {{--Payment Method Done--}}
             <li class="menu">
-                <a href="#payment_method" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.payment.index')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
