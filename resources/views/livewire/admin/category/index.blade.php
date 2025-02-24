@@ -115,7 +115,7 @@
                             <th scope="col">دسته بندی والد</th>
                             <th class="text-center" scope="col">ویژگی ها</th>
 
-                            <th class="text-center" scope="col">عملیات</th>
+                            <th class="text-center" scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>

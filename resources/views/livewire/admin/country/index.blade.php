@@ -84,8 +84,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">اسم کشور</th>
-
-                            <th class="text-center" scope="col">عملیات</th>
+                            <th class="text-center" scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
