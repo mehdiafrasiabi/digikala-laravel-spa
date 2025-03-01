@@ -16,24 +16,13 @@ class Product extends Model
 
     protected $guarded = [];
 
-
-//    public function reSizeImage($photo, $productId, $width, $height, $folder)
-//    {
-//        $path = public_path('products/' . $productId . '/' . $folder);
-//
-//        if (!file_exists($path)) {
-//            mkdir($path, 0755, true);
-//        }
-//
-//        $manager = new ImageManager(new Driver());
-//
-//        $manager->read($photo->getRealPath())
-//            ->scale($width, $height)
-//            ->toWebp()
-//            ->save($path . '/' . pathinfo($photo->hashName(), PATHINFO_FILENAME) . '.webp');
-//
-//    }
-
+    public function submitProductContent($formData, $productId)
+    {
+        Product::query()->where('id', $productId)->update([
+            'short_description' => $formData['short_description'],
+            'long_description' => $formData['long_description'],
+        ]);
+    }
 
 
     public function category()
@@ -54,6 +43,9 @@ class Product extends Model
     public function seo()
     {
         return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
+    }public function seller()
+    {
+        return $this->belongsTo(Seller::class);
     }
 
 

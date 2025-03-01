@@ -125,14 +125,6 @@ class ProductRepository implements ProductRepositoryInterface
         });
     }
 
-    public function submitProductContent($formData, $productId)
-    {
-        Product::query()->where('id', $productId)->update([
-            'short_description' => $formData['short_description'],
-            'long_description' => $formData['long_description'],
-        ]);
-    }
-
     public function removeOldPhoto($productImage, $productId)
     {
 

@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
             SellersTableSeeder::class,
             ProductsTableSeeder::class,
             SeoItemsTableSeeder::class,
-            ProductImagesTableSeeder::class
+            ProductImagesTableSeeder::class,
+            SlidersTableSeeder::class,
+            StoriesTableSeeder::class,
 
         ]);
     }

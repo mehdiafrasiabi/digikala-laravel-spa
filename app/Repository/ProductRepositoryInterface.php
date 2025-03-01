@@ -22,7 +22,7 @@ interface ProductRepositoryInterface
     public function removeProduct(Product $product);
 
 
-    public function submitProductContent($formData, $productId);
+  //  public function submitProductContent($formData, $productId);
     public function removeOldPhoto($productImage, $productId);
     public function setCoverOldImage($photoId,$productId);
     public function submitProductFeatures($formData, $productId);

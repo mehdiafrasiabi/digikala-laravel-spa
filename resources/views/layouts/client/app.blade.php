@@ -7,10 +7,14 @@
           content="هر آنچه که نیاز دارید با بهترین قیمت از دیجی‌کالا بخرید! جدیدترین انواع گوشی موبایل، لپ تاپ، لباس، لوازم آرایشی و بهداشتی، کتاب، لوازم خانگی، خودرو و... با امکان تعویض و مرجوعی آسان | ✓ارسال رايگان ✓پرداخت در محل ✓ضمانت بازگشت کالا - برای خرید کلیک کنید!">
    @include('layouts.client.app-link')
     <title>فروشگاه اینترنتی دیجیکالا</title>
+
 </head>
 <body>
 <livewire:client.home.header.index/>
-<main>
+@php
+$routeName = \Illuminate\Support\Facades\Route::current()->getName();
+@endphp
+<main class="{{$routeName=='client.product' ? 'container-fluid px-0 px-lg-5 mt-4' : ''}}">
     <!-- === mobile menu === -->
     <div class="fixed-bottom d-flex justify-content-around d-md-none border-top bg-white py-2">
         <a href="#" class="text-black d-flex justify-content-center align-items-center flex-column gap-1">
