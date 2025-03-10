@@ -39,5 +39,7 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
-
+    'zibal' =>[
+        'merchant'=>env('ZIBAL_MERCHANT_ID'),
+    ]
 ];

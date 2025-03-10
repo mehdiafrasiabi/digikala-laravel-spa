@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    {!! SEO::generate() !!}
     @include('layouts.admin.link')
 
 </head>

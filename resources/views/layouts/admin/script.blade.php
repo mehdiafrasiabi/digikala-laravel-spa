@@ -13,8 +13,11 @@
 <script src="/admin/src/assets/js/dashboard/dash_2.js"></script>
 <script src="/admin/src/plugins/src/sweetalerts2/sweetalerts2.min.js"></script>
 <script src="/admin/src/plugins/src/sweetalerts2/custom-sweetalert.js"></script>
+
 <script src="/admin/src/plugins/src/table/datatable/datatables.js"></script>
-<script>
+<script src="/admin/src/plugins/src/table/datatable/datatables.js"></script>
+<script src="/admin/src/plugins/src/table/datatable/button-ext/dataTables.buttons.min.js"></script>
+<script src="/admin/src/assets/js/apps/invoice-list.js"></script><script>
     ecommerceList = $('#ecommerce-list').DataTable({
         headerCallback:function(e, a, t, n, s) {
             e.getElementsByTagName("th")[0].innerHTML=`

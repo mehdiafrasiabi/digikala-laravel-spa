@@ -42,7 +42,7 @@ class Product extends Model
 
     public function seo()
     {
-        return $this->belongsTo(SeoItem::class, 'id', 'ref_id');
+        return $this->belongsTo(SeoItem::class, 'id', 'ref_id')->where('type', '=', 'product');
     }public function seller()
     {
         return $this->belongsTo(Seller::class);

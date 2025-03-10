@@ -20,9 +20,8 @@
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 <link href="/admin/src/plugins/src/apex/apexcharts.css" rel="stylesheet" type="text/css">
 <link href="/admin/src/assets/css/light/components/list-group.css" rel="stylesheet" type="text/css">
-<link href="/admin/src/assets/css/light/dashboard/dash_2.css" rel="stylesheet" type="text/css"/>
-
 <link href="/admin/src/assets/css/dark/components/list-group.css" rel="stylesheet" type="text/css">
+<link href="/admin/src/assets/css/light/dashboard/dash_2.css" rel="stylesheet" type="text/css"/>
 <link href="/admin/src/assets/css/dark/dashboard/dash_2.css" rel="stylesheet" type="text/css"/>
 <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
@@ -48,6 +47,16 @@
 {{--//upload image--}}
 <link href="/admin/src/plugins/css/light/filepond/custom-filepond.css" rel="stylesheet" type="text/css" />
 <link href="/admin/src/plugins/css/dark/filepond/custom-filepond.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/admin/src/plugins/src/table/datatable/datatables.css">
+
+<link rel="stylesheet" type="text/css" href="/admin/src/plugins/css/light/table/datatable/dt-global_style.css">
+<link href="/admin/src/assets/css/light/apps/invoice-list.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" type="text/css" href="/admin/src/plugins/css/dark/table/datatable/dt-global_style.css">
+<link href="/admin/src/assets/css/dark/apps/invoice-list.css" rel="stylesheet" type="text/css" />
+
+@stack('link')
 
 
 

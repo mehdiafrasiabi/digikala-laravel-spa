@@ -10,4 +10,18 @@ class Address extends Model
 {
     //
     use HasFactory,softDeletes;
+    protected $guarded= [];
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+    public function city()
+    {
+        return $this->belongsTo(State::class);
+    }
 }

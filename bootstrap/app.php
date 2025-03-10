@@ -11,7 +11,21 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->redirectGuestsTo('/auth');
+        $middleware->alias([
+            'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+            'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+            'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        ]);
+        $middleware->redirectGuestsTo(function (){
+            $currentPath = request()->path();
+            if (str_starts_with($currentPath ,'admin')) {
+                return route('admin.auth.login');
+            }elseif (str_starts_with($currentPath ,'seller')) {
+                return route('seller.auth.login');
+            }
+                return route('auth.index');
+
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

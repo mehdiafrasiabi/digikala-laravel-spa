@@ -26,7 +26,7 @@
         </div>
         <div class="shadow-bottom"></div>
         <ul class="list-unstyled menu-categories ps ps--active-y" id="accordionExample">
-        {{--Dashboard--}}
+            {{--Dashboard--}}
             <li class="menu">
                 <a href="#dashboard" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
@@ -58,7 +58,7 @@
 
             {{--Category DONE--}}
             <li class="menu">
-                <a href="{{route('admin.category.index')}}"  class="dropdown-toggle">
+                <a href="{{route('admin.category.index')}}" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -103,6 +103,23 @@
                         <a href="{{route('admin.product.create')}}">افزودن محصول جدید</a>
                     </li>
                 </ul>
+            </li>
+            {{--Coupons--}}
+            <li class="menu">
+                <a href="#" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-percent">
+                            <line x1="19" y1="5" x2="5" y2="19"></line>
+                            <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                            <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                        </svg>
+                        <span>کد تخفیف</span>
+
+                    </div>
+                </a>
+
             </li>
             {{--Comments--}}
             <li class="menu">
@@ -160,47 +177,63 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="orders" data-bs-parent="#accordionExample">
                     <li>
-                        <a href="./element-treeview.html">درانتظار</a>
+                        <a class="text-white badge badge-light-warning" href="{{route('admin.order.index')}}?status=all"> کل
+
+                            سفارشات </a>
                     </li>
                     <li>
-                        <a href="./element-treeview.html">درحال پردازش</a>
+                        <a class="text-white badge badge-light-secondary" href="{{route('admin.order.index')}}?status=pending">
+                            درانتظار </a>
                     </li>
                     <li>
-                        <a href="./element-typography.html"> تکمیل شده</a>
+                        <a class="text-white badge badge-light-info" href="{{route('admin.order.index')}}?status=processing">
+                            درحال پردازش </a>
                     </li>
                     <li>
-                        <a href="./element-typography.html">لفو شده</a>
+                        <a class="text-white badge badge-light-success" href="{{route('admin.order.index')}}?status=completed">
+                            کامل شده </a>
+                    </li>
+                    <li>
+                        <a class="text-white badge badge-light-danger" href="{{route('admin.order.index')}}?status=cancelled">
+                            لغوشده </a>
                     </li>
                 </ul>
             </li>
             {{--Transaction--}}
             <li class="menu">
-                <a href="#transactions" aria-expanded="false" class="dropdown-toggle">
+                <a href="#transactions" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="feather feather-dollar-sign">
-                            <line x1="12" y1="1" x2="12" y2="23"></line>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="feather feather-zap">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                         </svg>
                         <span>تراکنش ها</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                             stroke-linejoin="round" class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
                     </div>
                 </a>
                 <ul class="collapse submenu list-unstyled" id="transactions" data-bs-parent="#accordionExample">
                     <li>
-                        <a href="./element-treeview.html">لیست تراکنش ها</a>
+                        <a class="text-white badge badge-light-info" href="{{route('admin.transaction.index')}}?status=all"> لیست تراکنش ها </a>
                     </li>
                     <li>
-                        <a href="./element-treeview.html">تراکنش موفق</a>
+                        <a class="text-white badge badge-light-success" href="{{route('admin.transaction.index')}}?status=completed"> موفق </a>
                     </li>
                     <li>
-                        <a href="./element-typography.html">تراکنش ناموفق</a>
+                        <a class="text-white badge badge-light-danger" href="{{route('admin.transaction.index')}}?status=canceled"> ناموفق </a>
                     </li>
+
                 </ul>
             </li>
             {{--Users--}}
             <li class="menu">
-                <a href="#users" data-bs-toggle="collapse"  aria-expanded="false" class="dropdown-toggle">
+                <a href="#users" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -222,13 +255,13 @@
                 </a>
                 <ul class="collapse submenu list-unstyled" id="users" data-bs-parent="#accordionExample">
                     <li>
-                        <a href="./element-treeview.html">مشتریان</a>
+                        <a class="text-white badge badge-success" href="{{route('admin.user.index')}}">مشتریان</a>
                     </li>
                     <li>
-                        <a href="./element-treeview.html">ادمین ها</a>
+                        <a class="text-white badge badge-danger" href="{{route('admin.admin-user.index')}}">ادمین ها</a>
                     </li>
                     <li>
-                        <a href="./element-typography.html">فروشندگان</a>
+                        <a class="text-white badge badge-primary" href="./element-typography.html">فروشندگان</a>
                     </li>
                 </ul>
             </li>
@@ -267,7 +300,7 @@
             </li>
             {{--Delivery Method Done--}}
             <li class="menu">
-                <a href="{{route('admin.delivery.index')}}"  aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.delivery.index')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -298,7 +331,7 @@
             </li>
             {{--Story Done--}}
             <li class="menu">
-                <a href="{{route('admin.story.index')}}"  aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.story.index')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -318,7 +351,7 @@
             </li>
             {{--Slider--}}
             <li class="menu">
-                <a href="{{route('admin.slider.index')}}"  aria-expanded="false" class="dropdown-toggle">
+                <a href="{{route('admin.slider.index')}}" aria-expanded="false" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
